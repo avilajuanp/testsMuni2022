@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Barrios</h1>
+
+<div id="barrios">
+  <% @barrios.each do |barrio| %>
+    <%= render barrio %>
+    <p>
+      <%= link_to "Mostrar detalles de barrio", barrio %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nuevo barrio", new_barrio_path %>

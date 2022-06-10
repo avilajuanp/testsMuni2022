@@ -1,0 +1,27 @@
+<div id="<%= dom_id persona %>">
+
+  <% if @hola == 1 %>
+  Hola Laurita
+  <%end%>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= persona.name %>
+  </p>
+
+  <p>
+    <strong>Apellido:</strong>
+    <%= persona.surname %>
+  </p>
+
+  <p>
+    <strong>Calle:</strong>
+    <%= persona.street.name %>
+  </p>
+
+  <p>
+    <strong>Barrio:</strong>
+    <%= persona.barrio.name %>
+  </p>
+
+</div>

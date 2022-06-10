@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @street %>
+
+<div>
+  <%= link_to "Editar calle", edit_street_path(@street) %> |
+  <%= link_to "Volver a lista de calles", streets_path %>
+
+  <p>
+  <%= button_to "Borrar esta calle", @street, method: :delete %>
+  </p>
+</div>

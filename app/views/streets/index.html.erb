@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Calles</h1>
+
+<div id="streets">
+  <% @streets.each do |street| %>
+    <%= render street %>
+    <p>
+      <%= link_to "Mostrar detalles de calle", street %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nueva calle", new_street_path %>

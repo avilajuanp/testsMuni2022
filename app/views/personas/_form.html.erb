@@ -1,0 +1,43 @@
+<%= form_with(model: persona) do |form| %>
+  <% if persona.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(persona.errors.count, "error") %> prohibited this persona from being saved:</h2>
+
+      <ul>
+        <% persona.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Nombre, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :Apellido, style: "display: block" %>
+    <%= form.text_field :surname %>
+  </div>
+
+  <div>
+    <%= form.label :Calle, style: "display: block" %>
+    <%#= form.number_field :street_id %>
+    <%= form.select(:street_id, options_for_select(@streets.map{|street| [street.name, street.id]}), 
+    {:include_blank => "seleccione calle"}, class:'form-control', required:true) %>
+  </div>
+
+  <div>
+    <%= form.label :Barrio, style: "display: block" %>
+    <%#= form.number_field :barrio_id %>
+    <%= form.select(:barrio_id, options_for_select(@barrios.map{|barrio| [barrio.name, barrio.id]}), 
+    {:include_blank => "seleccione barrio"}, class:'form-control', required:true) %>
+  </div>
+
+  <div>
+    <p>
+      <%= form.submit %>
+    </p>
+  </div>
+<% end %>

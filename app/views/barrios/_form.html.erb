@@ -1,0 +1,27 @@
+<%= form_with(model: barrio) do |form| %>
+  <% if barrio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(barrio.errors.count, "error") %> prohibited this barrio from being saved:</h2>
+
+      <ul>
+        <% barrio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :"código de barrio", style: "display: block" %>
+    <%= form.text_field :barrioCode %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

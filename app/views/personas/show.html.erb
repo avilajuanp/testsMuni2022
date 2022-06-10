@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @persona %>
+
+<div>
+  <%= link_to "Editar esta persona", edit_persona_path(@persona) %> |
+  <%= link_to "Volver al listado de personas", personas_path %>
+
+  <p>
+  <%= button_to "Borrar esta persona", @persona, method: :delete %>
+  </p>
+</div>

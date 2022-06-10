@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @barrio %>
+
+<div>
+  <%= link_to "Editar este barrio", edit_barrio_path(@barrio) %> |
+  <%= link_to "Volver al listado de barrios", barrios_path %>
+
+  <p><%= button_to "Borrar este barrio", @barrio, method: :delete %></p>
+</div>
